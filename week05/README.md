@@ -24,14 +24,21 @@ docker run -d --name nginx3 -p 8093:80 nginx
 
 ## 3. 브라우저 확인
 
-각 페이지를 브라우저에서 확인하였다.
+### nginx1
+![nginx1](images/nginx1.png)
 
-* http://localhost:8091
-* http://localhost:8092
-* http://localhost:8093
+### nginx2
+![nginx2](images/nginx2.png)
 
-확인 결과는 `images/` 폴더에 캡처하여 저장하였다.
+### nginx3
+![nginx3](images/nginx3.png)
 
 ## 4. curl 확인
 
 ### n
+
+## 5. docker ps 확인
+
+`docker ps` 명령어를 통해 nginx1, nginx2, nginx3 컨테이너가 실행 중인 것을 확인하였다.
+
+![docker ps](images/docker-ps.png)
