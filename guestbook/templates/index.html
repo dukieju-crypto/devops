@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <style>
+    :root {
+      --brand: {{ color }};
+      --pink: #fce7f3;
+      --lavender: #f3e8ff;
+      --text: #59445f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+      background: linear-gradient(135deg, #fff1f7, #f3e8ff);
+      margin: 0;
+      padding: 40px 16px;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    .wrap { max-width: 640px; margin: 0 auto; }
+
+    header { text-align: center; margin-bottom: 28px; }
+
+    h1 {
+      color: var(--brand);
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .subtitle { color: #987b9d; font-size: 14px; }
+
+    .meta {
+      font-size: 12px;
+      color: #987b9d;
+      margin-top: 18px;
+      line-height: 2;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-right: 5px;
+    }
+
+    .card {
+      background: rgba(255,255,255,.9);
+      border: 1px solid #f8dcec;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(180, 130, 170, .12);
+      margin-bottom: 18px;
+    }
+
+    h2 { font-size: 17px; margin: 0 0 18px; }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border: 1px solid #eed9eb;
+      border-radius: 12px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fffaff;
+      color: var(--text);
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #e9c7ed;
+      border-color: #d8a9df;
+    }
+
+    button {
+      background: var(--brand);
+      color: #fff;
+      border: 0;
+      padding: 12px 22px;
+      border-radius: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    button:hover { transform: translateY(-2px); }
+
+    .entry {
+      border-bottom: 1px dashed #ecd8e9;
+      padding: 16px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .entry:last-child { border-bottom: 0; }
+
+    .entry .who { font-weight: 700; color: var(--brand); }
+
+    .entry .when { font-size: 11px; color: #b09bb3; margin-left: 6px; }
+
+    .entry .message { margin-top: 8px; line-height: 1.7; white-space: pre-wrap; }
+
+    .empty { color: #b09bb3; text-align: center; padding: 24px 0; }
+
+    footer { text-align: center; color: #b09bb3; font-size: 12px; padding: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>🌷 {{ title }} 🌷</h1>
+      <div class="subtitle">작은 이야기와 따뜻한 마음을 남겨 주세요 ♡</div>
+      <div class="meta">
+        <span class="badge">저장소: {{ storage }}</span>
+        <span class="badge">Pod/Host: {{ hostname }}</span>
+        <div>이 정원에 {{ visits }}번 방문했어요 ✨</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h2>💌 오늘의 작은 메시지</h2>
+      <form action="/add" method="post">
+        <input name="name" placeholder="이름을 적어 주세요 ♡" maxlength="20">
+        <textarea name="message" placeholder="오늘의 기분이나 따뜻한 한마디를 남겨 주세요..." rows="3" maxlength="200"></textarea>
+        <button type="submit">메시지 남기기 ♡</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>🧸 우리들의 이야기</h2>
+      {% if entries %}
+        {% for e in entries %}
+          <div class="entry">
+            <span class="who">{{ e.name }}</span>
+            <span class="when">{{ e.time }}</span>
+            <div class="message">{{ e.message }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty">아직 이야기가 없어요.<br>첫 번째 메시지를 남겨 주세요 🌸</div>
+      {% endif %}
+    </div>
+
+    <footer>made with ♡ · Dukie's Little Garden</footer>
+  </div>
+</body>
+</html>
