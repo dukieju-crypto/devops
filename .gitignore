@@ -1,3 +1,9 @@
 week04/backups/
 week04/restore-check/
 *:Zone.Identifier
+week04/backups/
+week04/restore-check/
+*:Zone.Identifier
+
+# Environment secrets
+guestbook/.env
