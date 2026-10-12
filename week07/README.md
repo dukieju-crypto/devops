@@ -31,3 +31,17 @@
 
 ## 7. 결론
 Docker Compose를 사용하여 여러 컨테이너를 실행하고, Healthcheck, 데이터 영속성 및 Nginx 요청 분산을 확인했다.
+
+## Screenshots
+
+### Docker Compose Status and Scaling
+![Compose Scale](screenshots/compose_scale.png)
+
+### Load Balancing
+![Hostnames](screenshots/hostnames.png)
+
+### Data Persistence
+![Data Persist](screenshots/data_persist.png)
+
+### Data Deleted with down -v
+![Data Deleted](screenshots/data_deleted.png)
