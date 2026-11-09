@@ -7,3 +7,5 @@ week04/restore-check/
 
 # Environment secrets
 guestbook/.env
+guestbook/k8s/secret.yaml
+guestbook/k8s/secret.yaml
