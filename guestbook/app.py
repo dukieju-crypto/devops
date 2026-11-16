@@ -127,7 +127,7 @@ def readyz():
             redis_client.ping()
         except Exception:
             return jsonify({"status": "not ready", "reason": "redis ping failed"}), 503
-    return jsonify({"status": "ok", "ready"}), 500
+    return jsonify({"status": "ready"}), 200
 
 
 if __name__ == "__main__":
