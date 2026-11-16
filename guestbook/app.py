@@ -1,3 +1,4 @@
+
 """
 DevOps 수업용 템플릿 애플리케이션 - 방명록(Guestbook)
 """
@@ -115,7 +116,7 @@ def api_entries():
 
 @app.route("/healthz")
 def healthz():
-    return jsonify({"status": "ok", "hostname": HOSTNAME}), 200
+    return jsonify({"status": "ok", "hostname": HOSTNAME}), 500
 
 
 @app.route("/readyz")
