@@ -30,7 +30,7 @@ spec:
             name: guestbook-config
         - secretRef:
             name: guestbook-secret
-        image: guestbook:303a851
+        image: ghcr.io/dukieju-crypto/guestbook:303a851
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 2
