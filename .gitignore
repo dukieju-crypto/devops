@@ -1,3 +1,10 @@
 week04/backups/
 week04/restore-check/
 *:Zone.Identifier
+
+# Sensitive and temporary files
+.env
+**/.env
+__pycache__/
+*.pyc
+guestbook/k8s/secret.yaml
