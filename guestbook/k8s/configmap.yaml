@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  APP_TITLE: "New \uBC29\uBA85\uB85D (k8s)"
+  REDIS_HOST: redis
+  REDIS_PORT: '6379'
+  THEME_COLOR: '#e11d48'
+kind: ConfigMap
+metadata:
+  name: guestbook-config
+  namespace: default
